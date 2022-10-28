@@ -1,5 +1,5 @@
 import './App.css';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Form, Route, Routes } from 'react-router-dom';
 import DetailPage from './pages/DetailPage';
 import MainPage from './pages/MainPage';
 import MarketPage from './pages/MarketPage';
@@ -12,6 +12,9 @@ import Footer from './components/Footer';
 
 function App() {
   return (
+   
+    <div className='test'>
+       <div className='test2'></div>
     <BrowserRouter>
       <div className="App">
         <Header />
@@ -26,6 +29,8 @@ function App() {
         <Footer />
       </div>
     </BrowserRouter>
+    <div className='test2'></div>
+    </div>
   );
 }
 
