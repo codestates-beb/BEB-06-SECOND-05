@@ -2,7 +2,11 @@ const db=require('../sequelize/models');
 
 const findAllPosts = async (req,res) => {
     try{
-        const user_data=await db['post'].findAll();
+        const user_data=await db['post'].findAll({
+            order:[
+                ['date_at','desc']
+            ]
+        });
         res.json(user_data);
 
     }catch(err){

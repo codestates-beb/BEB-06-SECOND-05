@@ -17,25 +17,32 @@ function WritePage() {
   const [nickName, setNickName] = useState('')  //닉네임
   const [title, setTitle] = useState('')  //제목
   const [content, setContent] = useState('')  //내용
+  // 테스트 주석
+  // const getValue = e => {
+  //   const { name, value } = e.target;
+  //   setTitle({
+  //     ...title,
+  //     [name] : value
+  //   })
+  //   console.log(setTitle);
+  // };
+  const getValue =(e) =>{
+    const titletmp = e.target.value
+    setTitle(titletmp)   
+  }
+  
 
-  const getValue = e => {
-    const { name, value } = e.target;
-    setTitle({
-      ...title,
-      [name] : value
-    })
-    console.log(setTitle);
-  };
 
 const Write = () => {
   console.log("버튼눌림")
     // 서버로 데이터 전송
     // axios.post("http://localhost:5000/test",{
+    // axios.post("http://localhost:5000/post/postall",{  
     axios.post("http://localhost:5000/post/postsave",{
       user_id : 'yoo',
       nickname : 'hello',
       title : title,
-      content : content,
+      content : content.content,
     })
     .then(function (response) {
       console.log("성공")
@@ -77,18 +84,17 @@ return (
       }}
         onChange={(event, editor) => {
         const data = editor.getData();
-        // console.log({ event, editor, data });
         setContent({
           ...content,
           content: data
         })
-        // console.log(content);
       }}
       />
     </div>
     </div>
   </Form>
   <button className='submit-button' onClick={Write}>입력</button>
+  <Popup open = {popup.open} setPopup = {setPopup} message = {popup.message} title = {popup.title} callback = {popup.callback}/>
   </div>
 );
 }
