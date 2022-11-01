@@ -27,10 +27,10 @@ const LoginPage = () => {
   // 로그인 버튼 클릭 시 DB에서 데이터 조회 후 로그인
   function Login(){
     console.log("로그인 버튼눌림")
-    axios.post("http://localhost:5000/user/userall",{
+    axios.post("http://localhost:5000/login",{
       user_id : userId,
       password :password,
-})
+  },{withCredentials: true})
   .then(function (response) {
     console.log("성공")
     console.log(response);

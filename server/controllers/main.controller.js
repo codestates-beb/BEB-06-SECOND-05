@@ -8,6 +8,7 @@ const datatest=(req,res)=>{
 };
 
 const login= async (req,res)=>{
+    console.log(req.cookies);
     const data=req.body;
     try{
         const userdata = await db['user'].findAll({
@@ -26,19 +27,13 @@ const login= async (req,res)=>{
             eth_amount:userdata[0].eth_amount,
             data_at:userdata[0].data_at
         }
-        const jwtToken=await tokencreate(payload);
-        res.cookie('jwt',jwtToken,{httpOnly:true,signed:true});
-        return res.send("성공입니당");
+        const jwtToken=jwt.sign(payload,process.env.SECRET_KEY,{expiresIn:'15m'});
+        res.cookie('loginToken',jwtToken,{httpOnly:true,expires:new Date(Date.now()+9000000)});
+        return res.status(200).send("로그인 성공");
     }catch(err){
         console.log(err);
     }
 };
-
-const tokencreate =(payload)=>{
-    const SECRET_KEY = process.env.SECRET_KEY;
-    const token =jwt.sign(payload,SECRET_KEY,{expiresIn:'15m'});
-    return token;
-}
 
 module.exports={
     datatest,

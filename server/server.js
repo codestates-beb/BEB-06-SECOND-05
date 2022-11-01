@@ -5,7 +5,8 @@ const cors=require("cors");
 const port=5000;
 const {web3}=require("./connect/web3.js");
 
-app.use(cors(),cookieParser('hihi'));
+app.use(cors({origin:true,credentials:true}));
+app.use(cookieParser());
 app.use(express.json({limit: '100mb'}));
 app.use(express.urlencoded({limit: '100mb', extended: false}));
 app.listen(port,()=>{

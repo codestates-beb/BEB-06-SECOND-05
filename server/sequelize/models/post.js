@@ -9,22 +9,14 @@ module.exports = function(sequelize, DataTypes) {
       comment: "키값"
     },
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.STRING(50),
       allowNull: true,
-      comment: "작성자(아이디)",
-      references: {
-        model: 'user',
-        key: 'id'
-      }
+      comment: "작성자(아이디)"
     },
     nickname: {
       type: DataTypes.STRING(50),
       allowNull: true,
-      comment: "작성자(닉네임)",
-      references: {
-        model: 'user',
-        key: 'nickname'
-      }
+      comment: "작성자(닉네임)"
     },
     title: {
       type: DataTypes.STRING(255),
@@ -39,7 +31,18 @@ module.exports = function(sequelize, DataTypes) {
     date_at: {
       type: DataTypes.DATE,
       allowNull: true,
+      defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
       comment: "게시글 생성일"
+    },
+    like_count: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
+    },
+    view_count: {
+      type: DataTypes.INTEGER,
+      allowNull: true,
+      defaultValue: 0
     }
   }, {
     sequelize,

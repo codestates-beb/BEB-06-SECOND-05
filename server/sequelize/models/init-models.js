@@ -10,10 +10,6 @@ function initModels(sequelize) {
 
   nft.belongsTo(user, { as: "user", foreignKey: "user_id"});
   user.hasMany(nft, { as: "nfts", foreignKey: "user_id"});
-  post.belongsTo(user, { as: "nickname_user", foreignKey: "nickname"});
-  user.hasMany(post, { as: "posts", foreignKey: "nickname"});
-  post.belongsTo(user, { as: "user", foreignKey: "user_id"});
-  user.hasMany(post, { as: "user_posts", foreignKey: "user_id"});
 
   return {
     nft,

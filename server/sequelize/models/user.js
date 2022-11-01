@@ -46,6 +46,7 @@ module.exports = function(sequelize, DataTypes) {
     date_at: {
       type: DataTypes.DATE,
       allowNull: true,
+      defaultValue: Sequelize.Sequelize.literal('CURRENT_TIMESTAMP'),
       comment: "계정생성일"
     }
   }, {
