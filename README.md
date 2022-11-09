@@ -7,9 +7,11 @@
 #### 지급받으신 토큰으로 MARKET에서 구매한 NFT는 소장,교환,거래가 가능합니다.
 #### 또한, SNS사이트 테마를 IU 팬카페로 설정하였습니다.
 #### IU 팬분들과 자유롭게 소통하고, NFT를 구매하여 소중한 추억을 평생 소장해 보시기 바랍니다!
+<br/>
 
 >### Use Stack
 ![image](https://user-images.githubusercontent.com/45747187/200584834-9587ef3b-b6b9-4f75-8405-c10f517e60ad.png)
+<br/>
 
 # ⚙️ How To Use
 >### git Clone
@@ -17,6 +19,8 @@
 # Clone this repository
 $ git clone git@github.com:codestates-beb/BEB-06-SECOND-05.git
 ````
+<br/>
+
 >### .env setting
 ```bash
 DATABASE_PASSWORD=""
@@ -25,34 +29,42 @@ INFURA_KEY=""
 SECRET_KEY=""
 SERVER_SECRET_KEY=""
 ```
+<br/>
+
 >### Client
 ```bash
 $ npm install --legacy-peer-deps
 $ npm start
 ```
+<br/>
+
 >### Server
 ```bash
 $ npm install
 $ npm start
 ```
+<br/>
 
 # 📜 Page
 >### Main Page
-![vllo 3](https://user-images.githubusercontent.com/45747187/200592769-945c25fe-67bf-4675-bd2f-17e6da8d4012.gif)
+![메인페이지](https://user-images.githubusercontent.com/45747187/200742660-5c437146-b755-4ed1-bf68-1d9578048951.gif)
+<br/>
 
 >### My Page
-(민팅도 되어있고 게시글도 있는 GIF)
-(토큰 전송하는 GIF)
->### Market Page
-(NFT 구매 GIF)
->### Login Page
-![vllo 4](https://user-images.githubusercontent.com/45747187/200593349-275143fa-6957-4603-ae6b-cf29fe6e26cd.gif)
+![마이페이지](https://user-images.githubusercontent.com/45747187/200742650-8964bfd9-81b9-48a2-927c-89998ff89605.gif)
+<br/>
 
+>### Market Page
+![마켓페이지](https://user-images.githubusercontent.com/45747187/200742385-8c148fe3-ec2d-4618-9f1f-d6d22037ba3d.gif)
+<br/>
+
+>### Login Page
+![로그인](https://user-images.githubusercontent.com/45747187/200736836-ff8b87f7-35eb-45f0-a92c-935be354d0c5.gif)
+<br/>
 
 >### SignUp Page
-![vllo 5](https://user-images.githubusercontent.com/45747187/200593615-8a952d15-3d69-4a0d-a869-59f2557557c6.gif)
-
-
+![회원가입](https://user-images.githubusercontent.com/45747187/200736825-93721335-3c51-4df0-b7b3-f235fae0fda2.gif)
+<br/>
 
 # 👨‍👩‍👦‍👦 Members
 ||Role|Github|
